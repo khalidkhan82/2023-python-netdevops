@@ -5,4 +5,3 @@ This is the main repository for my NetDevOps studies. It contains the following 
 1. Netmiko
 2. Napalm
 3. Nornir
-
