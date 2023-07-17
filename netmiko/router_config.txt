@@ -1,0 +1,7 @@
+write mem
+Building configuration...
+[OK]
+csr1000v-1#write mem
+Building configuration...
+[OK]
+csr1000v-1#

@@ -1,6 +1,8 @@
 from netmiko import Netmiko
 
 ## Netmiko
+
+# connect using a disctionary
 csr = {
     'device_type': 'cisco_ios',
     'host':   'sandbox-iosxe-recomm-1.cisco.com',
