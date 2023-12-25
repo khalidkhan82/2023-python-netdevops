@@ -1,0 +1,9 @@
+1. Import modules - napalm
+2. Define host(s) with a dictionary
+3. Instantiate the object of class NetworkDriver
+4. Create a variable of type NetwokDriver object by passing the host dictionary as
+keyword (using **KWARGS)
+5. Open the connection to the device using the 'open' method of the 
+NetworkDriver variable crrated in step 4.
+6. Send commands to the device using the various available methods
+7. Close the connection to the device using the 'close' method.
