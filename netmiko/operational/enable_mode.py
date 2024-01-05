@@ -9,7 +9,8 @@ csr = {
     'password': 'lastorangerestoreball8876'
 }
 
-# Will automatically 'disconnect()'
+# Open connection using the 'with' Contextmanager. Connection Will automatically 'disconnect()' when the execution
+# of the Contextmanager is complete. 
 with ConnectHandler(**csr) as net_connect:
     print(net_connect.find_prompt())
     # Call 'enable()' method to elevate privileges
