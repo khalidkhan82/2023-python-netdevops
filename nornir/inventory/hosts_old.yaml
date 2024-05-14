@@ -1,0 +1,36 @@
+---
+  AUT-CSR-01:
+    hostname: 192.168.1.101
+    username: admin
+    password: Admin123!
+    platform: ios
+
+  AUT-CSR-02:
+    hostname: 192.168.1.102
+    username: admin
+    password: Admin123!
+    platform: ios
+
+  AUT-vEOS-1:
+    hostname: 192.168.1.103
+    username: admin
+    password: Arista123!
+    platform: eos
+
+  AUT-vEOS-2:
+    hostname: 192.168.1.104
+    username: admin
+    password: Arista123!
+    platform: eos
+
+  AUT-SW-1:
+    hostname: 192.168.1.101
+    username: admin
+    password: Admin123!
+    platform: ios
+    
+  AUT-SW-2:
+    hostname: 192.168.1.101
+    username: admin
+    password: Admin123!
+    platform: ios

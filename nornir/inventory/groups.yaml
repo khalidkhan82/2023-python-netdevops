@@ -1,0 +1,10 @@
+---
+  Cisco:
+    platform: ios
+    username: admin
+    password: Admin123!
+
+  Arista:
+    platform: arista_eos
+    username: admin
+    password: Arista123!

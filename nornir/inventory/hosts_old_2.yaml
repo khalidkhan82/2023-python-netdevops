@@ -1,0 +1,31 @@
+---
+  AUT-CSR-1:
+    hostname: 192.168.1.101
+    groups:
+      - Cisco
+
+  AUT-CSR-2:
+    hostname: 192.168.1.102
+    groups:
+      - Cisco
+
+  AUT-vEOS-1:
+    hostname: 192.168.1.103
+    groups:
+      - Arista
+
+  AUT-vEOS-2:
+    hostname: 192.168.1.104
+    groups:
+      - Arista
+
+  AUT-SW-1:
+    hostname: 192.168.1.153
+    password: Admin123
+    groups:
+      - Cisco
+    
+  AUT-SW-2:
+    hostname: 192.168.1.101
+    groups:
+      - Cisco

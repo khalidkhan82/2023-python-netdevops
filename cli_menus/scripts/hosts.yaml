@@ -1,0 +1,34 @@
+location:
+  - PR
+  - CGH
+  - Bristol
+  - EDN
+  - AWS
+
+device_type:
+  - Core
+  - Distri
+  - Access
+  - Edge
+
+PR:
+  Core:
+    - pr core 1
+    - pr core 2
+  Dist:
+    - pr dist 1
+    - pr dist 2
+  Management: 
+    - pr Mgmt 1
+    - pr Mgmt 2
+
+CGH:
+  Core:
+    - cgh core 1
+    - cgh core 2
+  Dist:
+    - cgh dist 1
+    - cgh dist 2
+  Management: 
+    - cgh Mgmt 1
+    - cgh Mgmt 2
