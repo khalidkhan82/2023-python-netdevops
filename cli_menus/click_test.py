@@ -3,8 +3,8 @@
 import click
 
 Options = {"option 1": "blue",
-           "option 2": "green",
-           "option 3": "yellow"}
+        "option 2": "green",
+        "option 3": "yellow"}
 
 value = click.prompt('Please choose option', type=click.Choice(Options.keys()))
 @click.command("hello")
