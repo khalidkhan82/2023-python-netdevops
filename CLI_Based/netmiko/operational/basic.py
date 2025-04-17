@@ -4,9 +4,9 @@ from getpass import getpass
 # connect without a dictionary
 net_connect = ConnectHandler(
     device_type="cisco_ios",
-    host="sandbox-iosxe-recomm-1.cisco.com",
-    username="developer",
-    password="lastorangerestoreball8876",
+    host="10.10.20.21",
+    username="cisco",
+    password="cisco",
 )
 
 command = "show ip int br"

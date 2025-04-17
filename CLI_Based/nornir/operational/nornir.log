@@ -1,0 +1,440 @@
+2024-11-05 12:30:57,994 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['cdp']} on 1 hosts
+2024-11-05 12:31:00,360 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 485, in connect
+    self._auth(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 818, in _auth
+    raise saved_exception
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 805, in _auth
+    self._transport.auth_password(username, password)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/transport.py", line 1638, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/auth_handler.py", line 263, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 173, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 401, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1176, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.128.255.111:22
+
+
+Authentication failed.
+
+2024-11-05 12:31:39,404 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['cdp']} on 1 hosts
+2024-11-05 12:31:41,299 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 485, in connect
+    self._auth(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 818, in _auth
+    raise saved_exception
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 805, in _auth
+    self._transport.auth_password(username, password)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/transport.py", line 1638, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/auth_handler.py", line 263, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 173, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 401, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1176, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.128.255.111:22
+
+
+Authentication failed.
+
+2024-11-05 12:32:15,762 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['cdp']} on 1 hosts
+2024-11-05 12:32:17,912 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 485, in connect
+    self._auth(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 818, in _auth
+    raise saved_exception
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 805, in _auth
+    self._transport.auth_password(username, password)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/transport.py", line 1638, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/auth_handler.py", line 263, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 173, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 401, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1176, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.128.255.111:22
+
+
+Authentication failed.
+
+2024-11-05 12:33:10,013 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['cdp']} on 1 hosts
+2024-11-05 12:33:12,143 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 485, in connect
+    self._auth(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 818, in _auth
+    raise saved_exception
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 805, in _auth
+    self._transport.auth_password(username, password)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/transport.py", line 1638, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/auth_handler.py", line 263, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 173, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 401, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1176, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.128.255.111:22
+
+
+Authentication failed.
+
+2024-11-05 16:10:37,886 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['cdp']} on 1 hosts
+2024-11-05 16:10:40,477 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 485, in connect
+    self._auth(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 818, in _auth
+    raise saved_exception
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 805, in _auth
+    self._transport.auth_password(username, password)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/transport.py", line 1638, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/auth_handler.py", line 263, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 173, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 401, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1176, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.128.255.111:22
+
+
+Authentication failed.
+
+2024-11-05 16:11:10,685 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['cdp']} on 1 hosts
+2024-11-05 16:11:13,957 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 43, in napalm_get
+    method = getattr(device, getter)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'IOSDriver' object has no attribute 'get_cdp'
+
+2024-11-05 16:16:59,111 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['facts']} on 1 hosts
+2024-11-05 16:17:52,043 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_lldp_neighbors']} on 1 hosts
+2024-11-05 16:17:57,601 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 44, in napalm_get
+    result[g] = method(**options)
+                ^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 983, in get_lldp_neighbors
+    neighbors_detail = self.get_lldp_neighbors_detail()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 1051, in get_lldp_neighbors_detail
+    raise ValueError(
+ValueError: LLDP neighbor count has changed between commands. Interface: ['co.uk', 'co.uk', 'co.uk', 'G01', 'G01', '238-32333034474', '238-32333034474', 'AN', 'AN', 'co.uk', 'G01', 'G01', 'co.uk', 'G01', 'G01', 'co.uk', 'G01', 'G01']
+Entries: [{'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9C', 'remote_port': 'Eth1/1', 'remote_port_description': 'VPC PEER LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/1', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 117 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9E', 'remote_port': 'Eth1/3', 'remote_port_description': 'ROUTED LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/3', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 117 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9F', 'remote_port': 'Eth1/4', 'remote_port_description': 'ROUTED LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/4', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 117 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/1:1', 'remote_port_description': 'Ethernet Interface Port 98', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 51 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/1:1', 'remote_port_description': 'Ethernet Interface Port 238', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 51 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D7:79:81', 'remote_port': '00a0.98d7.7981', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 105 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D7:77:79', 'remote_port': '00a0.98d7.7779', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 90 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D6:12:CC', 'remote_port': '00a0.98d6.12cc', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 114 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D5:F7:80', 'remote_port': '00a0.98d5.f780', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 118 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '36353738-3936-5A43-3238-323330344747', 'remote_port': 'Embedded ALOM, Port 2', 'remote_port_description': 'NIC 10/40Gb QSFP', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 120 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '36353738-3936-5A43-3238-323330344743', 'remote_port': 'Embedded ALOM, Port 2', 'remote_port_description': 'NIC 10/40Gb QSFP', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 120 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'AC:3A:67:E7:B4:00', 'remote_port': 'Te1/1/1', 'remote_port_description': 'Uplink 1 of 2 to LON-VPR-SWC-001 Int Eth1/29', 'remote_system_name': 'LON-VPR-SWM-001.MO-LAN', 'remote_system_description': 'Technical Support: http://www.cisco.com/techsupport', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B'}, {'local_interface': '', 'remote_chassis_id': 'BC:4A:56:EC:A2:80', 'remote_port': 'Te1/1/1', 'remote_port_description': 'Link 1 of 2 to LON-VPR-SWC-001 Int Eth1/30', 'remote_system_name': 'LON-VPR-SWM-002.MO-LAN', 'remote_system_description': 'Technical Support: http://www.cisco.com/techsupport', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:E9', 'remote_port': 'X1', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X1', 'remote_system_name': 'LON-VPR-SWF-101', 'remote_system_description': 'Time remaining: 109 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:E9', 'remote_port': 'X2', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X2', 'remote_system_name': 'LON-VPR-SWF-101', 'remote_system_description': 'Time remaining: 110 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:C9', 'remote_port': 'Eth1/46', 'remote_port_description': '** vPC Peer Keep-Alive - Link 1 of 2 **', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 117 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/2:1', 'remote_port_description': 'Ethernet Interface Port 103', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 50 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/2:1', 'remote_port_description': 'Ethernet Interface Port 243', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 52 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'C4:B9:CD:E3:D1:20', 'remote_port': 'Eth2/1', 'remote_port_description': 'VPC PEER LINK 2 OF 2 TO LON-VPR-SWC-002 Int e2/1', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 119 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/1:2', 'remote_port_description': 'Ethernet Interface Port 99', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 51 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/1:2', 'remote_port_description': 'Ethernet Interface Port 239', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 51 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:BD', 'remote_port': 'X3', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X3', 'remote_system_name': 'LON-VPR-SWF-102', 'remote_system_description': 'Time remaining: 92 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:BD', 'remote_port': 'X4', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X4', 'remote_system_name': 'LON-VPR-SWF-102', 'remote_system_description': 'Time remaining: 93 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'C4:B9:CD:E3:D1:4D', 'remote_port': 'Eth2/46', 'remote_port_description': '** vPC Peer Keep-Alive - Link 2 of 2 **', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 119 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/2:2', 'remote_port_description': 'Ethernet Interface Port 104', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 53 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/2:2', 'remote_port_description': 'Ethernet Interface Port 244', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 52 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}]
+
+2024-11-05 19:02:50,450 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_lldp_neighbors']} on 1 hosts
+2024-11-05 19:02:55,315 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 44, in napalm_get
+    result[g] = method(**options)
+                ^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 983, in get_lldp_neighbors
+    neighbors_detail = self.get_lldp_neighbors_detail()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 1051, in get_lldp_neighbors_detail
+    raise ValueError(
+ValueError: LLDP neighbor count has changed between commands. Interface: ['co.uk', 'co.uk', 'co.uk', 'G01', 'G01', '238-32333034474', '238-32333034474', 'AN', 'AN', 'co.uk', 'G01', 'G01', 'co.uk', 'G01', 'G01', 'co.uk', 'G01', 'G01']
+Entries: [{'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9C', 'remote_port': 'Eth1/1', 'remote_port_description': 'VPC PEER LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/1', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 119 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9E', 'remote_port': 'Eth1/3', 'remote_port_description': 'ROUTED LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/3', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 119 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9F', 'remote_port': 'Eth1/4', 'remote_port_description': 'ROUTED LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/4', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 119 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/1:1', 'remote_port_description': 'Ethernet Interface Port 98', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 48 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/1:1', 'remote_port_description': 'Ethernet Interface Port 238', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 48 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D7:79:81', 'remote_port': '00a0.98d7.7981', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 107 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D7:77:79', 'remote_port': '00a0.98d7.7779', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 93 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D6:12:CC', 'remote_port': '00a0.98d6.12cc', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 116 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D5:F7:80', 'remote_port': '00a0.98d5.f780', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 91 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '36353738-3936-5A43-3238-323330344747', 'remote_port': 'Embedded ALOM, Port 2', 'remote_port_description': 'NIC 10/40Gb QSFP', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 120 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '36353738-3936-5A43-3238-323330344743', 'remote_port': 'Embedded ALOM, Port 2', 'remote_port_description': 'NIC 10/40Gb QSFP', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 120 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'AC:3A:67:E7:B4:00', 'remote_port': 'Te1/1/1', 'remote_port_description': 'Uplink 1 of 2 to LON-VPR-SWC-001 Int Eth1/29', 'remote_system_name': 'LON-VPR-SWM-001.MO-LAN', 'remote_system_description': 'Technical Support: http://www.cisco.com/techsupport', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B'}, {'local_interface': '', 'remote_chassis_id': 'BC:4A:56:EC:A2:80', 'remote_port': 'Te1/1/1', 'remote_port_description': 'Link 1 of 2 to LON-VPR-SWC-001 Int Eth1/30', 'remote_system_name': 'LON-VPR-SWM-002.MO-LAN', 'remote_system_description': 'Technical Support: http://www.cisco.com/techsupport', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:E9', 'remote_port': 'X1', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X1', 'remote_system_name': 'LON-VPR-SWF-101', 'remote_system_description': 'Time remaining: 111 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:E9', 'remote_port': 'X2', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X2', 'remote_system_name': 'LON-VPR-SWF-101', 'remote_system_description': 'Time remaining: 112 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:C9', 'remote_port': 'Eth1/46', 'remote_port_description': '** vPC Peer Keep-Alive - Link 1 of 2 **', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 119 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/2:1', 'remote_port_description': 'Ethernet Interface Port 103', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 46 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/2:1', 'remote_port_description': 'Ethernet Interface Port 243', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 49 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'C4:B9:CD:E3:D1:20', 'remote_port': 'Eth2/1', 'remote_port_description': 'VPC PEER LINK 2 OF 2 TO LON-VPR-SWC-002 Int e2/1', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 116 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/1:2', 'remote_port_description': 'Ethernet Interface Port 99', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 48 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/1:2', 'remote_port_description': 'Ethernet Interface Port 239', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 48 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:BD', 'remote_port': 'X3', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X3', 'remote_system_name': 'LON-VPR-SWF-102', 'remote_system_description': 'Time remaining: 95 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:BD', 'remote_port': 'X4', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X4', 'remote_system_name': 'LON-VPR-SWF-102', 'remote_system_description': 'Time remaining: 96 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'C4:B9:CD:E3:D1:4D', 'remote_port': 'Eth2/46', 'remote_port_description': '** vPC Peer Keep-Alive - Link 2 of 2 **', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 116 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/2:2', 'remote_port_description': 'Ethernet Interface Port 104', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 49 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/2:2', 'remote_port_description': 'Ethernet Interface Port 244', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 49 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}]
+
+2024-11-05 21:26:39,232 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_lldp_neighbors']} on 1 hosts
+2024-11-05 21:26:43,288 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 44, in napalm_get
+    result[g] = method(**options)
+                ^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 983, in get_lldp_neighbors
+    neighbors_detail = self.get_lldp_neighbors_detail()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 1051, in get_lldp_neighbors_detail
+    raise ValueError(
+ValueError: LLDP neighbor count has changed between commands. Interface: ['co.uk', 'co.uk', 'co.uk', 'G01', 'G01', '238-32333034474', '238-32333034474', 'AN', 'AN', 'co.uk', 'G01', 'G01', 'co.uk', 'G01', 'G01', 'co.uk', 'G01', 'G01']
+Entries: [{'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9C', 'remote_port': 'Eth1/1', 'remote_port_description': 'VPC PEER LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/1', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 116 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9E', 'remote_port': 'Eth1/3', 'remote_port_description': 'ROUTED LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/3', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 116 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9F', 'remote_port': 'Eth1/4', 'remote_port_description': 'ROUTED LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/4', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 116 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/1:1', 'remote_port_description': 'Ethernet Interface Port 98', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 45 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/1:1', 'remote_port_description': 'Ethernet Interface Port 238', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 45 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D7:79:81', 'remote_port': '00a0.98d7.7981', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 119 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D7:77:79', 'remote_port': '00a0.98d7.7779', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 104 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D6:12:CC', 'remote_port': '00a0.98d6.12cc', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 98 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D5:F7:80', 'remote_port': '00a0.98d5.f780', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 102 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '36353738-3936-5A43-3238-323330344747', 'remote_port': 'Embedded ALOM, Port 2', 'remote_port_description': 'NIC 10/40Gb QSFP', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 120 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '36353738-3936-5A43-3238-323330344743', 'remote_port': 'Embedded ALOM, Port 2', 'remote_port_description': 'NIC 10/40Gb QSFP', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 120 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'AC:3A:67:E7:B4:00', 'remote_port': 'Te1/1/1', 'remote_port_description': 'Uplink 1 of 2 to LON-VPR-SWC-001 Int Eth1/29', 'remote_system_name': 'LON-VPR-SWM-001.MO-LAN', 'remote_system_description': 'Technical Support: http://www.cisco.com/techsupport', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B'}, {'local_interface': '', 'remote_chassis_id': 'BC:4A:56:EC:A2:80', 'remote_port': 'Te1/1/1', 'remote_port_description': 'Link 1 of 2 to LON-VPR-SWC-001 Int Eth1/30', 'remote_system_name': 'LON-VPR-SWM-002.MO-LAN', 'remote_system_description': 'Technical Support: http://www.cisco.com/techsupport', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:E9', 'remote_port': 'X1', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X1', 'remote_system_name': 'LON-VPR-SWF-101', 'remote_system_description': 'Time remaining: 93 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:E9', 'remote_port': 'X2', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X2', 'remote_system_name': 'LON-VPR-SWF-101', 'remote_system_description': 'Time remaining: 94 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:C9', 'remote_port': 'Eth1/46', 'remote_port_description': '** vPC Peer Keep-Alive - Link 1 of 2 **', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 116 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/2:1', 'remote_port_description': 'Ethernet Interface Port 103', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 59 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/2:1', 'remote_port_description': 'Ethernet Interface Port 243', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 46 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'C4:B9:CD:E3:D1:20', 'remote_port': 'Eth2/1', 'remote_port_description': 'VPC PEER LINK 2 OF 2 TO LON-VPR-SWC-002 Int e2/1', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 118 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/1:2', 'remote_port_description': 'Ethernet Interface Port 99', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 45 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/1:2', 'remote_port_description': 'Ethernet Interface Port 239', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 45 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:BD', 'remote_port': 'X3', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X3', 'remote_system_name': 'LON-VPR-SWF-102', 'remote_system_description': 'Time remaining: 107 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:BD', 'remote_port': 'X4', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X4', 'remote_system_name': 'LON-VPR-SWF-102', 'remote_system_description': 'Time remaining: 108 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'C4:B9:CD:E3:D1:4D', 'remote_port': 'Eth2/46', 'remote_port_description': '** vPC Peer Keep-Alive - Link 2 of 2 **', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 118 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/2:2', 'remote_port_description': 'Ethernet Interface Port 104', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 47 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/2:2', 'remote_port_description': 'Ethernet Interface Port 244', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 46 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}]
+
+2024-11-05 22:04:00,256 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_lldp_neighbors']} on 1 hosts
+2024-11-05 22:04:13,094 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1139, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 485, in connect
+    self._auth(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 818, in _auth
+    raise saved_exception
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/client.py", line 805, in _auth
+    self._transport.auth_password(username, password)
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/transport.py", line 1638, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/paramiko/auth_handler.py", line 263, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 173, in open
+    self.device = self._netmiko_open(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+                           ^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 401, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 490, in __init__
+    self._open()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 495, in _open
+    self.establish_connection()
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/netmiko/base_connection.py", line 1176, in establish_connection
+    raise NetmikoAuthenticationException(msg)
+netmiko.exceptions.NetmikoAuthenticationException: Authentication to device failed.
+
+Common causes of this problem are:
+1. Invalid username and password
+2. Incorrect SSH-key file
+3. Connecting to the wrong device
+
+Device settings: cisco_ios 10.128.255.111:22
+
+
+Authentication failed.
+
+2024-11-05 22:05:07,549 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_lldp_neighbors']} on 1 hosts
+2024-11-05 22:05:10,887 - nornir.core.task -    ERROR -      start() - Host 'lon-vpr-swc-001': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 44, in napalm_get
+    result[g] = method(**options)
+                ^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 983, in get_lldp_neighbors
+    neighbors_detail = self.get_lldp_neighbors_detail()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/khalidm/Documents/Github/2023-python-netdevops/Vendor Specific/Netbox/Pynetbox/venv/lib/python3.11/site-packages/napalm/ios/ios.py", line 1051, in get_lldp_neighbors_detail
+    raise ValueError(
+ValueError: LLDP neighbor count has changed between commands. Interface: ['co.uk', 'co.uk', 'co.uk', 'G01', 'G01', '238-32333034474', '238-32333034474', 'AN', 'AN', 'co.uk', 'G01', 'G01', 'co.uk', 'G01', 'G01', 'co.uk', 'G01', 'G01']
+Entries: [{'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9C', 'remote_port': 'Eth1/1', 'remote_port_description': 'VPC PEER LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/1', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 118 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9E', 'remote_port': 'Eth1/3', 'remote_port_description': 'ROUTED LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/3', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 118 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:9F', 'remote_port': 'Eth1/4', 'remote_port_description': 'ROUTED LINK 1 OF 2 TO LON-VPR-SWC-001 Int e1/4', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 118 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/1:1', 'remote_port_description': 'Ethernet Interface Port 98', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 49 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/1:1', 'remote_port_description': 'Ethernet Interface Port 238', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 49 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D7:79:81', 'remote_port': '00a0.98d7.7981', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 91 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D7:77:79', 'remote_port': '00a0.98d7.7779', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 106 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D6:12:CC', 'remote_port': '00a0.98d6.12cc', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 100 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:A0:98:D5:F7:80', 'remote_port': '00a0.98d5.f780', 'remote_port_description': 'not advertised', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 105 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '36353738-3936-5A43-3238-323330344747', 'remote_port': 'Embedded ALOM, Port 2', 'remote_port_description': 'NIC 10/40Gb QSFP', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 120 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '36353738-3936-5A43-3238-323330344743', 'remote_port': 'Embedded ALOM, Port 2', 'remote_port_description': 'NIC 10/40Gb QSFP', 'remote_system_name': 'not advertised', 'remote_system_description': 'Time remaining: 120 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'AC:3A:67:E7:B4:00', 'remote_port': 'Te1/1/1', 'remote_port_description': 'Uplink 1 of 2 to LON-VPR-SWC-001 Int Eth1/29', 'remote_system_name': 'LON-VPR-SWM-001.MO-LAN', 'remote_system_description': 'Technical Support: http://www.cisco.com/techsupport', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B'}, {'local_interface': '', 'remote_chassis_id': 'BC:4A:56:EC:A2:80', 'remote_port': 'Te1/1/1', 'remote_port_description': 'Link 1 of 2 to LON-VPR-SWC-001 Int Eth1/30', 'remote_system_name': 'LON-VPR-SWM-002.MO-LAN', 'remote_system_description': 'Technical Support: http://www.cisco.com/techsupport', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:E9', 'remote_port': 'X1', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X1', 'remote_system_name': 'LON-VPR-SWF-101', 'remote_system_description': 'Time remaining: 96 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:E9', 'remote_port': 'X2', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X2', 'remote_system_name': 'LON-VPR-SWF-101', 'remote_system_description': 'Time remaining: 97 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '00:EB:D5:6F:18:C9', 'remote_port': 'Eth1/46', 'remote_port_description': '** vPC Peer Keep-Alive - Link 1 of 2 **', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 118 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/2:1', 'remote_port_description': 'Ethernet Interface Port 103', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 47 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/2:1', 'remote_port_description': 'Ethernet Interface Port 243', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 50 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'C4:B9:CD:E3:D1:20', 'remote_port': 'Eth2/1', 'remote_port_description': 'VPC PEER LINK 2 OF 2 TO LON-VPR-SWC-002 Int e2/1', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 116 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/1:2', 'remote_port_description': 'Ethernet Interface Port 99', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 48 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/1:2', 'remote_port_description': 'Ethernet Interface Port 239', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 49 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:BD', 'remote_port': 'X3', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X3', 'remote_system_name': 'LON-VPR-SWF-102', 'remote_system_description': 'Time remaining: 109 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '20:67:7C:55:7B:BD', 'remote_port': 'X4', 'remote_port_description': 'HP VC Flex-10/10D Module 4.85 X4', 'remote_system_name': 'LON-VPR-SWF-102', 'remote_system_description': 'Time remaining: 110 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': 'C4:B9:CD:E3:D1:4D', 'remote_port': 'Eth2/46', 'remote_port_description': '** vPC Peer Keep-Alive - Link 2 of 2 **', 'remote_system_name': 'LON-VPR-SWC-002.mfl.co.uk', 'remote_system_description': 'Time remaining: 116 seconds', 'remote_system_capab': 'B, R', 'remote_system_enable_capab': 'B, R'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet0/0/2:2', 'remote_port_description': 'Ethernet Interface Port 104', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 50 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}, {'local_interface': '', 'remote_chassis_id': '4A:97:F3:A0:00:01', 'remote_port': 'ethernet1/0/2:2', 'remote_port_description': 'Ethernet Interface Port 244', 'remote_system_name': 'HCSYNLENCL01-HCSYNLIG01', 'remote_system_description': 'Time remaining: 49 seconds', 'remote_system_capab': 'not advertised', 'remote_system_enable_capab': 'not advertised'}]
+

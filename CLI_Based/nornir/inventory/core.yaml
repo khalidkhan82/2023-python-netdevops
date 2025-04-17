@@ -1,0 +1,11 @@
+lon-vpr-swc-001:
+  hostname: 10.128.255.111
+  username: khalidm
+  password: ***
+  extras:
+    optional_args:
+      fast_cli: False
+      secret: ****
+      timeout: 90
+  groups:
+    - Cisco

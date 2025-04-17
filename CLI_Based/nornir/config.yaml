@@ -1,9 +1,9 @@
 inventory:
   plugin: SimpleInventory #we're using SimpleInventory here, other options are Ansible, Netbox and NSOT
   options:
-    host_file: "2023-python-netdevops/nornir/inventory/hosts.yaml"
-    group_file: "2023-python-netdevops/nornir/inventory/groups.yaml"
-    defaults_file: "2023-python-netdevops/nornir/inventory/defaults.yaml"
+    host_file: "../inventory/core.yaml"
+    group_file: "../inventory/groups.yaml"
+    defaults_file: "../inventory/defaults.yaml"
 runners:
   plugin: threaded #this makes Nornir threaded, the default is non-threaded
   options:

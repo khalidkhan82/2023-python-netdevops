@@ -1,7 +1,6 @@
 from netmiko import ConnectHandler
 from getpass import getpass
 
-
 # we define our host using a dictionary
 router = {
     'device_type': 'cisco_ios',
